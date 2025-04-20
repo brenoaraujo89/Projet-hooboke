@@ -188,7 +188,7 @@ export default function Agenda() {
                     <SelectValue placeholder="Todos os tipos" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">Todos</SelectItem>
+                    <SelectItem value="all">Todos</SelectItem>
                     <SelectItem value="show">Shows</SelectItem>
                     <SelectItem value="ensaio">Ensaios</SelectItem>
                     <SelectItem value="reuniao">Reuniões</SelectItem>
