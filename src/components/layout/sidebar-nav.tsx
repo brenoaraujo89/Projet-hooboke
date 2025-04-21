@@ -17,7 +17,7 @@ export function SidebarNav({ className, ...props }: SidebarNavProps) {
   const navItems = [
     {
       title: "Dashboard",
-      href: "/",
+      href: "/dashboard",
       icon: Home,
     },
     {

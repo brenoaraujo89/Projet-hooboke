@@ -17,6 +17,7 @@ import Disponibilidade from "./pages/Disponibilidade";
 import { AppLayout } from "./components/layout/app-layout";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import MusicianDirectory from "./pages/MusicianDirectory";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/equipe" element={<AppLayout><Equipe /></AppLayout>} />
           <Route path="/equipamentos" element={<AppLayout><Equipamentos /></AppLayout>} />
           <Route path="/disponibilidade" element={<AppLayout><Disponibilidade /></AppLayout>} />
+          <Route path="/encontrar-musicos" element={<MusicianDirectory />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

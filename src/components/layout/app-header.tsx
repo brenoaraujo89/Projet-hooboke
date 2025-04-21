@@ -21,6 +21,7 @@ export function AppHeader({ bandName = "Minha Banda" }: AppHeaderProps) {
   const navigate = useNavigate();
   
   const handleLogout = () => {
+    // In a real app, would clear auth state/tokens here
     navigate('/');
   };
 
