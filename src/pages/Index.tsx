@@ -1,4 +1,3 @@
-
 import { Music, Users, Calendar, DollarSign, List, Phone, LogIn, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
@@ -50,10 +49,7 @@ export default function Index() {
           <Button variant="ghost" onClick={() => navigate("/")} className="hidden sm:inline-flex">
             Início
           </Button>
-          <Button variant="ghost" onClick={() => navigate("/encontrar-musicos")} className="hidden md:inline-flex">
-            Contratar
-          </Button>
-          <Button variant="ghost" onClick={() => navigate("/contatos")} className="hidden md:inline-flex">
+          <Button variant="ghost" onClick={() => navigate("/contato")} className="hidden md:inline-flex">
             Contato
           </Button>
           <Button variant="outline" onClick={() => navigate("/login")}>
@@ -127,67 +123,6 @@ export default function Index() {
         </div>
       </section>
 
-      {/* CONTRATANTES */}
-      <section className="py-20 bg-gradient-to-r from-[#e5deff] via-[#f6f5fe] to-white">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center">
-          <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#6E59A5] mb-4">Contratantes, encontre músicos e bandas para seu evento</h2>
-            <p className="mb-6 text-lg text-[#8E9196]">
-              Navegue na lista de músicos e bandas disponíveis para contratação. Encontre a opção ideal para o seu evento!
-            </p>
-            <Button
-              size="lg"
-              className="bg-[#9b87f5] hover:bg-[#7E69AB] text-white font-semibold px-10 py-4 text-lg"
-              onClick={() => navigate("/encontrar-musicos")}
-            >
-              Ver lista de músicos e bandas
-            </Button>
-          </div>
-          <div className="md:w-1/2 relative">
-            <div className="absolute -z-10 inset-0 bg-gradient-to-br from-[#9b87f5]/20 via-[#E5DEFF]/30 to-transparent rounded-full blur-3xl"></div>
-            <div className="bg-white p-6 rounded-2xl shadow-lg max-w-lg mx-auto">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                <div className="h-3 w-3 rounded-full bg-green-500"></div>
-              </div>
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 p-3 border rounded-lg">
-                  <div className="h-10 w-10 bg-hooboke-100 rounded-full flex items-center justify-center text-hooboke-600 font-bold">
-                    MB
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Melody Band</h4>
-                    <p className="text-xs text-gray-500">Rock, Pop • São Paulo</p>
-                  </div>
-                  <Badge className="ml-auto" variant="outline">Disponível</Badge>
-                </div>
-                <div className="flex items-center gap-4 p-3 border rounded-lg">
-                  <div className="h-10 w-10 bg-hooboke-100 rounded-full flex items-center justify-center text-hooboke-600 font-bold">
-                    JT
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Jazz Trio</h4>
-                    <p className="text-xs text-gray-500">Jazz • Rio de Janeiro</p>
-                  </div>
-                  <Badge className="ml-auto" variant="outline">Disponível</Badge>
-                </div>
-                <div className="flex items-center gap-4 p-3 border rounded-lg">
-                  <div className="h-10 w-10 bg-hooboke-100 rounded-full flex items-center justify-center text-hooboke-600 font-bold">
-                    AS
-                  </div>
-                  <div>
-                    <h4 className="font-medium">Acoustic Soul</h4>
-                    <p className="text-xs text-gray-500">MPB, Soul • Belo Horizonte</p>
-                  </div>
-                  <Badge className="ml-auto" variant="outline">Disponível</Badge>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FOOTER / CTA */}
       <footer className="bg-white border-t border-[#ececec] pt-16 pb-8">
         <div className="max-w-6xl mx-auto px-6 md:px-12">
@@ -215,19 +150,19 @@ export default function Index() {
             <div>
               <h3 className="font-semibold text-[#1A1F2C] mb-4">Produto</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Funcionalidades</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Preços</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Suporte</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">FAQ</a></li>
+                <li><a href="/funcionalidades" className="text-[#8E9196] hover:text-[#6E59A5]">Funcionalidades</a></li>
+                <li><a href="/precos" className="text-[#8E9196] hover:text-[#6E59A5]">Preços</a></li>
+                <li><a href="/suporte" className="text-[#8E9196] hover:text-[#6E59A5]">Suporte</a></li>
+                <li><a href="/faq" className="text-[#8E9196] hover:text-[#6E59A5]">FAQ</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold text-[#1A1F2C] mb-4">Empresa</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Sobre nós</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Blog</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Contato</a></li>
-                <li><a href="#" className="text-[#8E9196] hover:text-[#6E59A5]">Carreiras</a></li>
+                <li><a href="/contato" className="text-[#8E9196] hover:text-[#6E59A5]">Contato</a></li>
+                <li><a href="/termos-de-uso" className="text-[#8E9196] hover:text-[#6E59A5]">Termos de Uso</a></li>
+                <li><a href="/privacidade" className="text-[#8E9196] hover:text-[#6E59A5]">Privacidade</a></li>
+                <li><a href="/cookies" className="text-[#8E9196] hover:text-[#6E59A5]">Cookies</a></li>
               </ul>
             </div>
           </div>
@@ -236,9 +171,9 @@ export default function Index() {
               &copy; {new Date().getFullYear()} Hoobôke. Todos os direitos reservados.
             </div>
             <div className="flex gap-6">
-              <a href="#" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Termos de Uso</a>
-              <a href="#" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Privacidade</a>
-              <a href="#" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Cookies</a>
+              <a href="/termos-de-uso" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Termos de Uso</a>
+              <a href="/privacidade" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Privacidade</a>
+              <a href="/cookies" className="text-sm text-[#8E9196] hover:text-[#6E59A5]">Cookies</a>
             </div>
           </div>
         </div>
