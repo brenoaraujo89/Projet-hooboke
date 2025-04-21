@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Calendar as CalendarIcon, Plus, Filter } from "lucide-react";
+import { Calendar as CalendarIcon, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -195,12 +194,14 @@ export default function Agenda() {
                   </SelectContent>
                 </Select>
               </div>
-              <Calendar
-                mode="single"
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-                className="rounded-md border"
-              />
+              <div className="flex justify-center">
+                <Calendar
+                  mode="single"
+                  selected={selectedDate}
+                  onSelect={setSelectedDate}
+                  className="rounded-md border"
+                />
+              </div>
               {selectedDate && (
                 <Button
                   variant="ghost"

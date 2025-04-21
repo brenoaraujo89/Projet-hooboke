@@ -3,6 +3,7 @@ import { Bell } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useNavigate } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +18,12 @@ interface AppHeaderProps {
 }
 
 export function AppHeader({ bandName = "Minha Banda" }: AppHeaderProps) {
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+    navigate('/');
+  };
+
   return (
     <header className="flex h-16 items-center justify-between border-b px-6">
       <div className="flex items-center gap-4 lg:gap-6">
@@ -54,11 +61,11 @@ export function AppHeader({ bandName = "Minha Banda" }: AppHeaderProps) {
               </div>
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Perfil</DropdownMenuItem>
-            <DropdownMenuItem>Configurações</DropdownMenuItem>
-            <DropdownMenuItem>Assinatura</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate('/dashboard')}>Perfil</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate('/dashboard')}>Configurações</DropdownMenuItem>
+            <DropdownMenuItem onClick={() => navigate('/dashboard')}>Assinatura</DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Sair</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout}>Sair</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
